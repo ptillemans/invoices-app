@@ -1,0 +1,2 @@
+# elex custom repository
+deb [trusted=yes] https://dsl.colo.elex.be/artifactory/debian-local stable main contrib non-free

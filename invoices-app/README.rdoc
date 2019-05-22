@@ -1,0 +1,42 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+This is using ruby 2.1.2.
+
+Note: there is a temporary dependency on a fork of the crono repo.
+
+* System dependencies
+
+For the upload to VIIPER the Oracle client libraries should be installed on the
+machines. The instant client is fine.
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+rake test
+
+* Services (job queues, cache servers, search engines, etc.)
+
+this solution depends on a *crono* background worker which must
+also be started
+
+* Deployment instructions
+
+Jenkins will build a docker image for this application.
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.

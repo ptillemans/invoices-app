@@ -1,0 +1,79 @@
+<%= form_for(@invoice) do |f| %>
+    <% if @invoice.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+
+          <ul>
+            <% @invoice.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <h1>Invoice <%= @invoice.book_number%> for <%= @invoice.organization %></h1>
+
+    <div class="row">
+      <div class="small-2 column">
+        Approver :
+      </div>
+      <div id="approver" class="small-2 column">
+        <%= @invoice.approver %>&nbsp;
+      </div>
+      <div class="small-2 column">
+        File :
+      </div>
+      <div id="file_name" class="small-6 column">
+        <%= @invoice.file_name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-2 column">
+        Uploaded :
+      </div>
+      <div class="field small-2 column">
+        <%= f.check_box :uploaded %>
+      </div>
+      <div class="small-2 column">
+        Result :
+      </div>
+      <div class="field small-6 column">
+        <%= f.text_field :result %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-2 column">
+        Jira Id :
+      </div>
+      <div id="jira_id" class="small-4 column">
+        <%= @invoice.jira_id %>&nbsp;
+      </div>
+      <div class="small-4 column">
+        Jira Status :
+      </div>
+      <div id="jira_status" class="small-4 column">
+        <%= @invoice.jira_status %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-2 column">
+        First created :
+      </div>
+      <div id="created_at" class="small-4 column">
+        <%= @invoice.created_at %>&nbsp
+      </div>
+      <div class="small-2 column">
+        Last updated :
+      </div>
+      <div id="updated_at" class="small-4 column">
+        <%= @invoice.updated_at %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+<% end %>

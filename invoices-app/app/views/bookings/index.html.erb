@@ -1,0 +1,15 @@
+<h1>Listing bookings</h1>
+
+<% @bookings.each do |booking| %>
+  <row>
+    <div class="small-8"><%= booking %></div>
+    <div class="small-4">
+      <ul class="small-block-grid-3">
+        <li><%= link_to 'Show', booking, class: 'button tiny' %></li>
+        <li><%= link_to 'Edit', edit_booking_path(booking), class: 'button tiny' %></li>
+        <li><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny' %></li>
+      </ul>
+    </div>
+  </row>
+<% end %>
+<br>

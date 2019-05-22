@@ -1,0 +1,5 @@
+#!/bin/bash
+
+/invoices/bin/bundle exec rake db:migrate \
+     && /invoices/bin/bundle exec rake db:seed \
+     && /invoices/bin/bundle exec rails server -e production -b 0.0.0.0

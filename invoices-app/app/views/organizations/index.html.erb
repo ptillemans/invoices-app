@@ -1,0 +1,28 @@
+<h1>Listing organizations</h1>
+
+<table>
+    <thead>
+        <th class="small-8">Organization</th>
+        <th> </th>
+    </thead>
+
+    <tbody>
+        <% @organizations.each do |organization| %>
+            <tr>
+                <td class="small-8"><%= organization.name %></td>
+
+                <td class="menu align-right">
+                    <ul class="button-group">
+                        <li><%= link_to 'Show', organization, class: 'button tiny' %></li>
+                        <li><%= link_to 'Edit', edit_organization_path(organization), class: 'button tiny' %></li>
+                        <li><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny' %></li>
+                    </ul>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Organization', new_organization_path %>

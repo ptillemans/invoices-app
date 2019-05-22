@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if (echo $OSTYPE | grep ^darwin)
+then
+  DOCKER="docker"
+else
+  DOCKER="sudo docker"
+fi
+
+$DOCKER run \
+        -it \
+        -v /etc/invoices.cfg:/etc/invoices.cfg \
+        -v /var/lib/invoices:/var/lib/invoices \
+        invoices \
+        /usr/local/bin/invoiceRake $*

@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Invoice <%= @invoice.book_number%> for <%= @invoice.organization %></h1>
+
+<div class="row">
+  <div class="small-2 column">
+    Approver :
+  </div>
+  <div id="approver" class="small-2 column">
+    <%= @invoice.approver %>&nbsp;
+  </div>
+  <div class="small-2 column">
+    File :
+  </div>
+  <div id="file_name" class="small-6 column">
+    <%= @invoice.file_name %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-2 column">
+    Uploaded :
+  </div>
+  <div id="uploaded" class="small-2 column">
+    <%= @invoice.uploaded %>
+  </div>
+  <div class="small-2 column">
+    Result :
+  </div>
+  <div id="result" class="small-6 column">
+    <%= @invoice.result %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-2 column">
+    Jira Id :
+  </div>
+  <div id="jira_id" class="small-4 column">
+    <%= @invoice.jira_id %>&nbsp;
+  </div>
+  <div class="small-4 column">
+    Jira Status :
+  </div>
+  <div id="jira_status" class="small-4 column">
+    <%= @invoice.jira_status %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-2 column">
+    First created :
+  </div>
+  <div id="created_at" class="small-4 column">
+    <%= @invoice.created_at %>&nbsp
+  </div>
+  <div class="small-2 column">
+    Last updated :
+  </div>
+  <div id="updated_at" class="small-4 column">
+    <%= @invoice.updated_at %>
+  </div>
+</div>
+
+<br/>
+
+
+
+
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>

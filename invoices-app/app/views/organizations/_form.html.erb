@@ -1,0 +1,33 @@
+<%= form_for(@organization) do |f| %>
+  <% if @organization.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@organization.errors.count, "error") %> prohibited this organization from being saved:</h2>
+
+      <ul>
+      <% @organization.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div class="large-9 columns">
+      <%= f.label :name, "Name :" %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="large-3 columns">
+      <%= f.label :backends %>
+      <%= f.select :backends, [['Jira', 'jira']], {}, {multiple: true, size: 2}%>
+    </div>
+  </div>
+  <div class="field">
+    <div class="small-6 columns">
+      <%= f.label :default_approver, 'Approver :'%>
+      <%= f.text_field :default_approver%>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

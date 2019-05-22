@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if (echo $OSTYPE | grep ^darwin)
+then
+  DOCKER="docker"
+else
+  DOCKER="sudo docker"
+fi
+
+$DOCKER run -e RAILS_ENV=production -it invoices /usr/local/bin/invoiceRake

@@ -1,0 +1,33 @@
+<h1>Organization : <%= @organization.name %></h1>
+
+<% if @organization.backends.member? "jira" %>
+  <h2>Jira Backend Enabled</h2>
+  <div class="row">
+    <div class="small-3 columns">
+      Default Approver :
+    </div>
+    <div class="small-9 columns">
+      <%= @organization.default_approver %>
+    </div>
+  </div>
+<% end %>
+
+<% if @organization.backends.member? "viiper" %>
+  <h2>Viiper Backend Enabled</h2>
+
+  <div class="row">
+    <div class="small-3 columns">
+      Viiper Directory Name :
+    </div>
+    <div class="small-9 columns">
+      <%= @organization.viiper_dir_name %>
+    </div>
+  </div>
+<% end %>
+
+<br/>
+
+<ul class="small-block-grid-2">
+  <li><%= link_to 'Edit', edit_organization_path(@organization), class: 'button' %></li>
+  <li><%= link_to 'Back', organizations_path, class: 'button' %></li>
+</ul>

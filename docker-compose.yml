@@ -1,0 +1,38 @@
+version: "3"
+services:
+  frontend:
+    image: melexis/invapp
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    ports:
+      - "3000:3000"
+    volumes:
+      - ${SOURCE_DIR}:/tmp/incoming
+      - ${TARGET_DIR}:/var/lib/invoices
+    environment:
+      - USERNAME=${USERNAME}
+      - PASSWORD=${PASSWORD}
+      - WEBSITE=https://jira.melexis.com/jira/rpc/soap/jirasoapservice-v2?wsdl
+  worker:
+    image: melexis/invapp
+    entrypoint:
+      - bundle
+      - exec
+      - crono
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    volumes:
+      - ${SOURCE_DIR}:/tmp/incoming
+      - ${TARGET_DIR}:/var/lib/invoices
+    environment:
+      - USERNAME=${USERNAME}
+      - PASSWORD=${PASSWORD}
+      - WEBSITE=https://jira.melexis.com/jira/rpc/soap/jirasoapservice-v2?wsdl

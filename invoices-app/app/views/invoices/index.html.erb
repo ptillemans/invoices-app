@@ -1,0 +1,25 @@
+
+<h1>Listing invoices</h1>
+
+<%= form_tag invoices_path, method: 'get' do %>
+    <%= select_tag 'search', options_from_collection_for_select(@organizations, :id, :name, @organization) %>
+    <%= submit_tag 'Search', name: nil %>
+<% end %>
+
+
+
+<%= will_paginate @invoices %>
+
+<% @invoices.each do |invoice| %>
+  <row>
+    <div class="small-8"><%= invoice %></div>
+    <div class="small-4">
+      <ul class="small-block-grid-3">
+        <li><%= link_to 'Show', invoice, class: 'button tiny' %></li>
+        <li><%= link_to 'Edit', edit_invoice_path(invoice), class: 'button tiny' %></li>
+        <li><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny' %></li>
+      </ul>
+    </div>
+  </row>
+<% end %>
+<br>

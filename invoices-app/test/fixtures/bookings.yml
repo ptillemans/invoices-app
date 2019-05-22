@@ -1,0 +1,7 @@
+one:
+  organization: Melexis Tessenderlo
+  book_number: 12345678
+  supplier: Test Supplier
+  reference: test_1234
+  amount: 123.45
+  barcode: bcd_1234

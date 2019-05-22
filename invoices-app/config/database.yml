@@ -26,4 +26,4 @@ melexis:
 
 fremach:
   <<: *default
-  database: /var/lib/invoices/invoices.db
+  database: db/invoices.db

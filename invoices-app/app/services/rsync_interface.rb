@@ -4,12 +4,7 @@ require 'fileutils'
 class RsyncInterface
 
   def self.update_database(sources, target)
-    new_files = false
-    sources.gsub('"','').split.each do |source|
-      Rails.logger.info("running rsync -a #{source} #{target}")
-      FileUtils.cp_r(source, target)
-    end
-    GC.start()
+    FileUtils.cp_r(sources, target)
     RsyncInterface.add_new_scans(target)
   end
 

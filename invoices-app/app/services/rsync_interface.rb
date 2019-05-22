@@ -1,4 +1,5 @@
 require 'find'
+require 'fileutils'
 
 class RsyncInterface
 
@@ -6,15 +7,7 @@ class RsyncInterface
     new_files = false
     sources.gsub('"','').split.each do |source|
       Rails.logger.info("running rsync -a #{source} #{target}")
-      Rsync.run("-a", source, target) do |result|
-        if result.success?
-          unless result.changes.empty?
-            new_files = true
-          end
-        else
-          Rails.logger.error "rsync error : #{result.error} (rsync -a #{source} #{target})"
-        end
-      end
+      FileUtils.cp_r(source, target)
     end
     GC.start()
     RsyncInterface.add_new_scans(target)

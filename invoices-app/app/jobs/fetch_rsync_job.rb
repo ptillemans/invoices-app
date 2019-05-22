@@ -1,4 +1,3 @@
-require 'rsync'
 require 'net/ftp'
 
 class FetchRSyncJob < ActiveJob::Base

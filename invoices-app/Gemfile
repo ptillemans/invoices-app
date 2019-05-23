@@ -63,3 +63,6 @@ gem 'will_paginate', "> 3.0"
 
 # ruby 2.2.0 dropped Logger::Application
 gem 'logger-application'
+
+# Added at 2019-05-23 14:47:28 +0200 by uploader:
+gem "certified", "~> 1.0"

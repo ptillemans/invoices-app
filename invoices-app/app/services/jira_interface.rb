@@ -1,3 +1,4 @@
+require 'certified'
 require 'jira4r/jira_tool'
 require 'base64'
 

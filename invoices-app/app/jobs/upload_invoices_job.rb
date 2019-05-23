@@ -22,9 +22,9 @@ class UploadInvoicesJob < ActiveJob::Base
 
   def jira_interface
     logger.info "Creating jira_interface"
-    website = InvoiceConfig.get('WEBSITE')
-    username = InvoiceConfig.get('USERNAME')
-    password = InvoiceConfig.get('PASSWORD')
+    website = InvoiceConfig.get('JIRA_URL')
+    username = InvoiceConfig.get('JIRA_USERNAME')
+    password = InvoiceConfig.get('JIRA_PASSWORD')
     puts "Connecting to #{website} using #{username}/#{password}"
     jira = JiraInterface.instance(website, username, password)
     return JiraUploader.new(jira)

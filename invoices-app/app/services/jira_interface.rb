@@ -4,9 +4,7 @@ require 'base64'
 PROJECT = InvoiceConfig.get('PROJECT')
 INVOICE_TYPE = InvoiceConfig.get('INVOICE_TYPE')
 
-WEBSITE = InvoiceConfig.get('WEBSITE')
-USERNAME= InvoiceConfig.get('USERNAME')
-PASSWORD = InvoiceConfig.get('PASSWORD')
+USERNAME = InvoiceConfig.get('JIRA_USERNAME')
 
 SUPPLIER_FIELD_ID = InvoiceConfig.get('SUPPLIER_FIELD_ID')
 AMOUNT_FIELD_ID = InvoiceConfig.get('AMOUNT_FIELD_ID')

@@ -2,9 +2,9 @@
 class InvoiceConfig
   @@config = {
     "DATABASE_FILE" => "/var/lib/invoices/invoices.db",
-    "WEBSITE" => "https://jira-test.melexis.com/jira/rpc/soap/jirasoapservice-v2?wsdl",
-    "USERNAME" => "uploader",
-    "PASSWORD" => "password",
+    "JIRA_URL" => "https://jira.melexis.com/jira/rpc/soap/jirasoapservice-v2?wsdl",
+    "JIRA_USERNAME" => "uploader",
+    "JIRA_PASSWORD" => "password",
     "PROJECT" => "INVAPP",
     "INVOICE_TYPE" => "Invoice",
     "SCAN_DIR" => "/var/lib/invoices",

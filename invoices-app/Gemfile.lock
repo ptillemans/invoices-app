@@ -108,7 +108,7 @@ GEM
     nokogiri (1.10.10-x86-mingw32)
       mini_portile2 (~> 2.4.0)
     public_suffix (3.0.3)
-    rack (1.6.11)
+    rack (1.6.13)
     rack-cas (0.16.1)
       addressable (~> 2.3)
       nokogiri (~> 1.5)

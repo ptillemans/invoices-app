@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~>6.1.7.1'
+gem 'rails', '~>7.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', "~>2.0.2"
 # Use SCSS for stylesheets
@@ -38,7 +38,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 
 # solution gems
-gem "jira4r", "1.3.0"
+gem "jira-ruby"
 gem "roo-xls", "~>1.0"
 gem "tzinfo-data"
 
@@ -48,7 +48,7 @@ gem 'haml'
 gem 'sinatra', require: nil
 
 # theming
-gem 'foundation-rails', "~>6.6.2"
+gem 'foundation-rails', "~>6.9.0"
 
 # cas support
 gem 'rack-cas'
@@ -66,3 +66,6 @@ gem "certified", "~> 1.0"
 # force save version of json
 gem "json", "~>2.3.0"
 
+# ostruct, csv not standard from 3.5.0
+gem "ostruct"
+gem "csv"

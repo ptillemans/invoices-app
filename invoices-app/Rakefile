@@ -2,6 +2,7 @@
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
 require File.expand_path('../config/application', __FILE__)
+require 'rake/testtask'
 
 Rails.application.load_tasks
 #
@@ -9,7 +10,7 @@ Rails.application.load_tasks
 #
 namespace :test do
   desc "Test tests/invoices/* code"
-  Rails::TestTask.new(invoices: ['test:prepare', 'environment']) do |t|
+  Rake::TestTask.new(invoices: ['test:prepare', 'environment']) do |t|
     t.pattern = 'test/invoices/*.rb'
   end
 end
